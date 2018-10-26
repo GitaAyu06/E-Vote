@@ -1,0 +1,3 @@
+calon1 :1
+calon2 :0
+calon3 :0
