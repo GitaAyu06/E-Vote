@@ -1,7 +1,7 @@
 # E-Vote
-Usefull program for election! You can give vote and read out the result and save the result in .txt file 
+Usefull program for election! You can give vote and read out the result and save the result in .txt file. 
 
-There are two main programs for this project, first is the program for the voters and the second is the program for the server to find out the result o
+There are two main programs for this project, first is the program for the voters and the second is the program for the server to find out the result.
 
 PROGRAM TUTORIALS
 ======
