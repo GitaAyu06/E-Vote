@@ -43,12 +43,12 @@ void loading(){
 ```
 void menu(){
     int m;
-	printf("\n\nMenu :\n\t1. HASIL\n\t2. LIST DAFTAR PEMILIH\n\t3. HAPUS\n\t4. KELUAR"); //daftar menu
+	printf("\n\nMenu :\n\t1. HASIL\n\t2. LIST DAFTAR PEMILIH\n\t3. HAPUS\n\t4. KELUAR"); 
 	printf("\n\nPilih Nomor Menu: ");
 	scanf("%d",&m);
 	
 	switch(m){ 
-		case 1:
+	case 1:
             loading();
             hasil();
             main();
@@ -69,9 +69,9 @@ void menu(){
         break;
         default:       
             printf("\n\t\t\t\t\t\tMaaf, harap pilih MENU berdasarkan angka yang tertera");
-            sleep (1);                  //pesan eror jika input yang dimasukkan tidak sesuai dengan pilihan apapun
+            sleep (1);                  
             system("cls");
-            main();                     //kembali untuk memilih menu
+            main();                     
             break;          
 	}
 }
@@ -102,8 +102,8 @@ int list(){
 	baca = fopen("data.txt","r");
 	int g = 0;
 	while(!feof(baca)){
-		fscanf(baca,"%llu\n",&angka);fflush(stdin);printf("\n\n");             //membaca setiap baris pada file "data.txt"
-		printf("NPM Pemilih ke %d :  %llu",g,angka);                           //menampilkan hasil pembacaan
+		fscanf(baca,"%llu\n",&angka);fflush(stdin);printf("\n\n");             
+		printf("NPM Pemilih ke %d :  %llu",g,angka);                           
 		g++;
 	}
 	fclose(baca);
@@ -117,7 +117,7 @@ int hasil(){
     system("cls");
     FILE * calon1;
 	calon1 = fopen("calon.txt","r");
-	fscanf(calon1,"calon1 :%d\ncalon2 :%d\ncalon3 :%d\n",&satu,&dua,&tiga);     //membaca jumlah dari file dengan format .txt
+	fscanf(calon1,"calon1 :%d\ncalon2 :%d\ncalon3 :%d\n",&satu,&dua,&tiga);     
 	fclose(calon1);
 	suma = satu;
 	sumb = dua;
@@ -128,7 +128,7 @@ int hasil(){
 	printf("3. CALON 3= %d suara\n", sumc);
 
 	if ((suma>sumb) && (suma>sumc)){
-		printf ("\nKETUA TERPILIH (CALON 1)\n\n");                             //menampilkan ketua terpilih dari hasil suara terbanyak
+		printf ("\nKETUA TERPILIH (CALON 1)\n\n");                             
 	}
 	else if ((sumb>suma) && (sumb>sumc)){
 		printf ("\nKETUA TERPILIH (CALON 2)\n\n");
@@ -140,7 +140,7 @@ int hasil(){
         printf ("\n\t\t\t\t\t PEMILIHAN BELUM DILAKUKAN\n\n");
         }
 	else{
-		printf("\n\t\t\t KETUA TERPILIH MEMILIKI POIN SERI MAKA AKAN DIADAKAN PEMILIHAN ULANG\n\n"); //ditampilkan jika terdapat jumlah suara sama
+		printf("\n\t\t\t KETUA TERPILIH MEMILIKI POIN SERI MAKA AKAN DIADAKAN PEMILIHAN ULANG\n\n"); 
 		}	
 	calon1 = fopen("calon.txt","w");
 	fprintf(calon1,"calon1 :%d\ncalon2 :%d\ncalon3 :%d\n",suma,sumb,sumc);
@@ -182,17 +182,17 @@ int pilih();
 ```
 void menu(){
     int m;
-	printf("\n\nMenu :\n\t1. PILIH\n\t2. BANTUAN\n\t3. KELUAR\n"); //daftar menu
+	printf("\n\nMenu :\n\t1. PILIH\n\t2. BANTUAN\n\t3. KELUAR\n"); 
 	printf("\n\nPilih Nomor Menu: ");
 	scanf("%d",&m);
 	
 	switch(m){
-		case 1:
-			loading(); 
-			verifikasi();
-			main();
+	case 1:
+	    loading(); 
+	    verifikasi();
+	    main();
             break;
-		case 2:
+	case 2:
             loading();
             bantuan();
             break;
@@ -202,9 +202,9 @@ void menu(){
             break;
         default:       
             printf("\n\t\t\t\t\t\tMaaf, harap pilih MENU berdasarkan angka yang tertera");
-            sleep (1);                  //pesan eror jika input yang dimasukkan tidak sesuai dengan pilihan apapun
+            sleep (1);                  
             system("cls");
-            main();                     //kembali untuk memilih menu
+            main();                     
             break;          
 	}
 }
@@ -223,7 +223,7 @@ int verifikasi(){
 	pasti2 = fopen("cocok.txt","r");
 			while(!feof(pasti2)){
 			fscanf(pasti2,"%d\n",&cocok);fflush(stdin);
-			 if (npm == cocok){                              //memastikan pemilih belum pernah memilih sebelumnya
+			 if (npm == cocok){                              
 				system("cls");
 				printf("\t\t\t\tAnda sudah memilih\n\n");
 				system("pause");
@@ -231,13 +231,13 @@ int verifikasi(){
 			 }
 		    }
 	while(!feof(pasti)){
-		fscanf(pasti,"%d\n",&angka);fflush(stdin);           //memastikan data pemilih telah terdaftar
+		fscanf(pasti,"%d\n",&angka);fflush(stdin);           
 		if(angka == npm && npm != cocok){
 			FILE *tulis;
 			tulis = fopen("cocok.txt","a");
 			fprintf(tulis,"%d\n",npm);
 			fclose(tulis);
-			pilih();//ketika nilai yang dimasukan dengan data yang di inginkan sama maka akan memanggil pilih dengan pass by value hitung 1
+			pilih();
 			break;
 		}
 		else if(feof(pasti)&& angka != npm && npm != cocok){   
@@ -291,7 +291,7 @@ int pilih()
 	printf("Masukkan Nomor Calon Pilihan Anda: ");
 	scanf("%d", &pilihan);
 	
-	if(pilihan == calon[0]){                   //menyimpan suara yang dimasukkan kedalam array untuk setiap calon yang berkesesuaian
+	if(pilihan == calon[0]){                   
 		a[i]=1;
 	}
 	else if(pilihan == calon[1]){
@@ -310,7 +310,7 @@ int pilih()
 	fscanf(sumk,"calon1 :%d\ncalon2 :%d\ncalon3 :%d\n",&suma,&sumb,&sumc);
     fclose(sumk);
 
-	for (j=0;j<hitung;j++){                   //menghitung jumlah suara yang dihasilkan untuk sementara
+	for (j=0;j<hitung;j++){                   
 		suma=suma+a[j];
 		sumb=sumb+b[j];
 		sumc=sumc+c[j];
@@ -341,7 +341,7 @@ void bantuan(){
      printf("han, selain itu dengan adanya fitur verifikasi, kecurangan dalam proses pemilihan dapat dihindari karena hanya pe-\n");
      printf("milih dengan NPM terdaftar dapat menggunakan fitur 'PILIH'.\n");
      printf("\n[1] PILIH               = memilih salah satu dari calon yang tersedia dengan mencocokkan NPM yang dimasukkkan");
-	 printf("\n[2] BANTUAN             = berisi penjelasan mengenai program");
+     printf("\n[2] BANTUAN             = berisi penjelasan mengenai program");
      printf("\n[3] KELUAR              = mengakhiri program dan keluar");
      printf("\n\n\n\t\t\t\t\t\tKembali ke Menu?\n\n\t\t\t\t\t\t [1]Ya\t[2]Tidak\n");
 	 printf("\t\t\t\t\t\t Pilih Nomor= ");
