@@ -10,6 +10,7 @@ This tutorial will explain steps to build E-Vote program (both for the voter and
 
 Server E-Vote
 --------
+![Flowchart](Voters.png)
 
 1. Declare the global variables and the modulars
 ```
@@ -159,6 +160,7 @@ void keluar (){
 
 Voters E-Vote
 -----------
+![Flowchart](Server.png)
 
 1. Declare the global variables and the modulars
 ```
