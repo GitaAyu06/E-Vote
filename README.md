@@ -93,7 +93,7 @@ system("PAUSE");
 }
 
 ```
-5. Modular for show voter that has already registered
+5. Modular for showing voters that has already registered
 ```
 int list(){                                              
     system("cls");
@@ -149,7 +149,7 @@ int hasil(){
 	system("pause");
 }
 ```
-7. Modular for end the program
+7. Modular for ending the program
 ```
 void keluar (){
      system("cls");
@@ -180,7 +180,7 @@ void error2();
 int verifikasi();
 int pilih();     
 ```
-2. modular for showing and choose menu
+2. Modular for showing and choose menu
 ```
 void menu(){
     int m;
@@ -211,7 +211,7 @@ void menu(){
 	}
 }
 ```
-3. modular for verifying registered voters and voters those haven't been voted yet 
+3. Modular for verifying registered voters and voters those haven't been voted yet 
 ```
 int verifikasi(){
 	int angka,pemasti,cocok;
@@ -252,7 +252,7 @@ int verifikasi(){
 	fclose(pasti2);
 }
 ```
-4. modular for give vote
+4. Modular for giving vote
 ```
 int pilih()                                       
 {
@@ -331,7 +331,7 @@ int pilih()
      }
 }
 ```
-5. modular for show program information
+5. Modular for showing program information
 ```
 void bantuan(){
 	system("cls");
@@ -359,7 +359,7 @@ void bantuan(){
 			}
 }
 ```
-6. modular for eror handling 1
+6. Modular for eror handling 1
 ```
 void error()
 {
@@ -368,7 +368,7 @@ void error()
     bantuan();
 }
 ```
-7. modular for eror handling 2
+7. Modular for eror handling 2
 ```
 void error2()
 {	printf("Input salah. Masukkan nomor calon sesuai yang tertera\n\n");
