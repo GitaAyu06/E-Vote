@@ -74,7 +74,7 @@ void loading(){
 	printf("\n\t\t\t\t\t\t LOADING ");
       for (z=1;z<6;z++){
 	   printf(". ");
-	   sleep(1);
+	   sleep(200);
       }
       system("cls");    
 }
